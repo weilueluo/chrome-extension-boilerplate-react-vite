@@ -2,7 +2,7 @@ import { execSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { select } from '@inquirer/prompts';
-import manifest from '../../../chrome-extension/manifest.ts';
+import manifest from '../../../chrome-extension/manifest.js';
 import { deleteModules } from './deleteModules.js';
 import { recoverModules } from './recoverModules.js';
 import type { ActionType } from './types.js';
