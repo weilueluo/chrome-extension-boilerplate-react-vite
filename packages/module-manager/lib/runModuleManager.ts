@@ -1,10 +1,10 @@
+import { execSync } from 'node:child_process';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { select } from '@inquirer/prompts';
 import manifest from '../../../chrome-extension/manifest.ts';
 import { deleteModules } from './deleteModules.js';
 import { recoverModules } from './recoverModules.js';
-import { execSync } from 'node:child_process';
-import { resolve } from 'node:path';
-import { readFileSync, writeFileSync } from 'node:fs';
 import type { ActionType } from './types.js';
 
 const manifestPath = resolve(import.meta.dirname, '..', '..', '..', 'chrome-extension', 'manifest.ts');
