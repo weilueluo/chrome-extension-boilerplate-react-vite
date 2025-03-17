@@ -3,8 +3,8 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { select } from '@inquirer/prompts';
 import manifest from '../../../chrome-extension/manifest.js';
-import { deleteModules } from './deleteModules.js';
-import { recoverModules } from './recoverModules.js';
+import { deleteFeature } from './deleteFeature.js';
+import { recoverFeature } from './recoverFeature.js';
 import type { ActionType } from './types.js';
 
 const manifestPath = resolve(import.meta.dirname, '..', '..', '..', 'chrome-extension', 'manifest.ts');
@@ -23,10 +23,10 @@ const runModuleManager = async () => {
 
   switch (tool) {
     case 'delete':
-      await deleteModules(manifestObject);
+      await deleteFeature(manifestObject);
       break;
     case 'recover':
-      await recoverModules(manifestObject);
+      await recoverFeature(manifestObject);
   }
 
   const updatedManifest = manifestString
